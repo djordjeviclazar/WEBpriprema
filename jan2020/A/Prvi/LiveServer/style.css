@@ -1,0 +1,46 @@
+.glavni
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.prikaz
+{
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fabrikaIme
+{
+    order: 0;
+    font-weight: bold;
+    font-size: large;
+}
+
+.prikazSilosa
+{
+    display: flex;
+    flex-direction: row;
+    min-width: 200px;
+}
+
+.stubKontejner
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.okvir
+{
+    width: 20px;
+    height: 500px;
+    border-width: 3px;
+    border-color: black;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 0;
+}
+

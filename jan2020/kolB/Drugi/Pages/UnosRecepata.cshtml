@@ -1,0 +1,17 @@
+﻿@page
+@model Drugi.Pages.UnosRecepataModel
+@{
+    ViewData["Title"] = "Unos recepata";
+}
+
+<h3>Unos novog recepta</h3>
+
+<div>Naziv <input type="text" asp-for = "Recept.Naziv"/></div>
+<div>Vreme pripreme <input type="text" asp-for = "Recept.VremePripreme"/> minuta </div>
+@foreach (var item in Model.tipovi)
+{
+    <input type="radio" asp-for = "Recept.Sastojci" name="tip" value="@item"/>@item
+    <br/>
+}
+
+<button type="submit">Dodaj</button>
