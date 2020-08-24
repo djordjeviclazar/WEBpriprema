@@ -15,6 +15,8 @@ namespace Zadatak.Models
 
         public bool WithTieBreak { get; set; }
 
+        public bool IsPlayed { get; set; }
+
         public Result Result { get; set; }
     }
 }
