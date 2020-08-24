@@ -28,6 +28,7 @@ namespace Zadatak.Data
             modelBuilder.Entity<Match>()
                 .HasOne(match => match.Result)
                 .WithOne(result => result.Match)
+                .HasForeignKey<Result>(result => result.MatchId)
                 .OnDelete(DeleteBehavior.Restrict);
             
             // Result - Set 1:N
@@ -39,11 +40,6 @@ namespace Zadatak.Data
             // Match - Player N:2
             modelBuilder.Entity<Match>()
                 .HasOne(match => match.Player1)
-                .WithMany(player => player.Matches)
-                .OnDelete(DeleteBehavior.Restrict);
-            
-            modelBuilder.Entity<Match>()
-                .HasOne(match => match.Player2)
                 .WithMany(player => player.Matches)
                 .OnDelete(DeleteBehavior.Restrict);
         }
