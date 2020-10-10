@@ -9,7 +9,7 @@ fetch("https:/localhost:5500/fabrikacontroller/dodaj", {
     body: JSON.stringify({
         "Ime": "Zitopek",
         "Id": 1,
-        "brojSilosa": 1,
+        "brojSilosa": 3,
         "Silosi":[
             {
                 "Id": 1,
@@ -51,10 +51,11 @@ fetch("https:/localhost:5500/fabrikacontroller/all")
         const kontejner = document.createElement("div");
         kontejner.className = "kontejnerFabrike";
         document.body.appendChild(kontejner);
-        const fabrika = new Fabrika(kontejner, element["Ime"], element["Id"], element["Silosi"].forEach(s => {
+        const fabrika = new Fabrika(kontejner, element["Ime"], element["Id"], [], element["brojSilosa"]);
+        element["Silosi"].forEach(s => {
             const silos = new Silos(s["Id"], s["Ime"], s["Kolicina"], s["Kapacitet"]);
             fabrika.silosi.push(silos);
-        }), element["brojSilosa"]);
+        })
         fabrike.push(fabrika);
     });
 }))

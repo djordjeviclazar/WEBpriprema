@@ -29,7 +29,7 @@ export class Fabrika
         const lblIme = document.createElement("label");
         lblIme.innerHTML = this.ime;
         lblIme.className = "fabrikaIme";
-        prikazSilosa.appendChild(lblIme);
+        prikaz.appendChild(lblIme);
 
         const prikazSilosa = document.createElement("div");
         prikazSilosa.className = "prikazSilosa";

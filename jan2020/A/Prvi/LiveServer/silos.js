@@ -54,14 +54,26 @@ export class Silos
         {
             //#region pozivanje API-ja
 
-            fetch("https:/localhost:5500/fabrikacontroller/napunisilos/" + this.id + "/" + kolicina, {
-                method:"PUT"
+            fetch("https://localhost:5500/fabrikacontroller/napunisilos/",{
+                method:"PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "Id": this.id,
+                    "Kolicina": kolicina
+                })
             }).then(p => {
                 if (p.ok())
                 {
                     this.stub.height = (stub.parentElement().height / 100) * (novaKolicina * 100 / this.kapacitet);
                     this.kolicina = novaKolicina;
-                }});
+                }}).catch(poruka =>{
+                    alert(poruka);
+                    /*
+                    poruka.json().then(res =>{alert(res.poruka)})
+                     */
+                });
 
             //#endregion
         }
